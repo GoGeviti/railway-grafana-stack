@@ -51,7 +51,7 @@ datasources:
     withCredentials:
     isDefault: false
     jsonData:
-      tracesToLogs:
+      tracesToLogsV2:
         datasourceUid: grafana_lokiq
         spanStartTimeShift: '5m'
         spanEndTimeShift: '5m'
