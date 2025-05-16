@@ -53,8 +53,8 @@ datasources:
     jsonData:
       tracesToLogs:
         datasourceUid: grafana_lokiq
-        spanStartTimeShift: '30m'
-        spanEndTimeShift: '30m'
+        spanStartTimeShift: '-1h'
+        spanEndTimeShift: '1h'
         tags: ['trace_id']
         filterByTraceID: true
         filterBySpanID: false
