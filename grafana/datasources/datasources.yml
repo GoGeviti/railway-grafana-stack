@@ -56,5 +56,6 @@ datasources:
         tags: ['trace_id']
         spanStartTimeShift: '5m'
         spanEndTimeShift: '5m'
-        filterByTraceID: true
+        filterByTraceID: false
         filterBySpanID: false
+        query: '{trace_id="$traceId"}'
