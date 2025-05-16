@@ -20,6 +20,12 @@ datasources:
     basicAuthUser:
     withCredentials:
     isDefault: true
+    jsonData:
+      derivedFields:
+        - name: TraceID
+          matcherRegex: 'trace[_-]?id[=:\" ]+([a-f0-9-]+)'
+          url: '/explore?left=["now-1h","now","Tempo",{"query":"{traceID=\"$1\"}"}]'
+          datasourceUid: grafana_tempo
   - name: Prometheus
     type: prometheus
     access: proxy
@@ -44,3 +50,11 @@ datasources:
     basicAuthUser:
     withCredentials:
     isDefault: false
+    jsonData:
+      traceToLogs:
+        datasourceUid: grafana_lokiq
+        tags: ['trace_id']
+        spanStartTimeShift: '5m'
+        spanEndTimeShift: '5m'
+        filterByTraceID: true
+        filterBySpanID: false
