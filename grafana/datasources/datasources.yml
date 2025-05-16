@@ -55,6 +55,5 @@ datasources:
         datasourceUid: grafana_lokiq
         spanStartTimeShift: '5m'
         spanEndTimeShift: '5m'
-        tags: ['trace_id']
-        filterByTraceID: true
-        filterBySpanID: false
+        customQuery: true
+        query: '{trace_id="$${traceId}"}'
