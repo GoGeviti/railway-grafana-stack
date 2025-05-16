@@ -56,4 +56,4 @@ datasources:
         spanStartTimeShift: '5m'
         spanEndTimeShift: '5m'
         customQuery: true
-        query: '{trace_id="$traceId"}'
+        query: '{trace_id="${__span.traceId}"}'
